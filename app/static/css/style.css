@@ -1,0 +1,33 @@
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+@import url(http://fonts.googleapis.com/css?family=Monofett);
+
+td {
+  height: 80px;
+  width: 80px;
+  background: black;
+}
+
+tr:nth-of-type(2n) td:nth-of-type(2n) {
+  background: red;
+}
+
+tr:nth-of-type(2n-1) td:nth-of-type(2n-1) {
+  background: red;
+}
+
+.playerA {
+  margin: auto;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background: red;
+}
+
+.playerB {
+  margin: auto;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background: white;
+}
