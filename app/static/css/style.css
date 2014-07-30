@@ -2,18 +2,44 @@
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 @import url(http://fonts.googleapis.com/css?family=Monofett);
 
+table {
+  border-collapse: collapse;
+}
+
 td {
   height: 80px;
   width: 80px;
-  background: black;
+  background-color: black;
 }
 
-tr:nth-of-type(2n) td:nth-of-type(2n) {
-  background: red;
+/* Advanced CSS Method */
+
+table tr:nth-child(2n) td:nth-child(2n), table tr:nth-child(2n-1) td:nth-child(2n-1){
+  background-color: silver;
 }
 
-tr:nth-of-type(2n-1) td:nth-of-type(2n-1) {
-  background: red;
+table tr:nth-child(-2n+3) td:nth-child(2n) div, table tr:nth-child(2) td:nth-child(2n-1) div {
+  margin: auto;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background: darkred;
+}
+
+table tr:nth-child(2n+6) td:nth-child(2n-1) div, table tr:nth-child(7) td:nth-child(2n) div {
+  margin: auto;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background: gray;
+}
+
+/* Easy Method
+ *
+ * .n0 {
+  width:80px;
+  height: 80px;
+  background: grey;
 }
 
 .playerA {
@@ -31,3 +57,4 @@ tr:nth-of-type(2n-1) td:nth-of-type(2n-1) {
   width: 60px;
   background: white;
 }
+*/
