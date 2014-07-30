@@ -34,6 +34,14 @@ table tr:nth-child(2n+6) td:nth-child(2n-1) div, table tr:nth-child(7) td:nth-ch
   background: gray;
 }
 
+.even {
+  color: red;
+}
+
+.odd {
+  color: blue;
+}
+
 /* Easy Method
  *
  * .n0 {
@@ -58,3 +66,4 @@ table tr:nth-child(2n+6) td:nth-child(2n-1) div, table tr:nth-child(7) td:nth-ch
   background: white;
 }
 */
+

@@ -19,6 +19,58 @@ app.get('/checkers', function(req, res){
   res.render('checkers');
 });
 
+app.get('/add/:i/:j/:k/:l', function(req, res){
+  req.params.i *=1;
+  req.params.j *=1;
+  req.params.k *=1;
+  req.params.l *=1;
+
+  req.params.fontsize = req.query.fontsize;
+  req.params.color = req.query.color;
+  req.params.borderwidth = req.query.borderwidth;
+  
+  res.render('sum', req.params);
+});
+
+app.get('/sumlist/:list', function(req, res){
+  req.params.list = req.params.list.split(',');
+
+  req.params.list = req.params.list.map(function(x){
+    return x * 1;
+  });
+
+  var sum = 0;
+
+  for(var i = 0; i < req.params.list.length; i++){
+    sum += req.params.list[i];
+  }
+
+  req.params.sum = sum;
+
+  req.params.odd = req.query.odd;
+  req.params.even = req.query.even;
+
+  res.render('sumlist', req.params);
+});
+
+app.get('/rolldice/:x', function(req, res){
+  var rolls = [];
+  var sum = 0;
+
+  for(var i = 0; i < req.params.x; i++){
+    rolls.push(Math.floor(Math.random()*6)+1);
+  }
+
+  for(var j = 0; j < rolls.length; j++){
+    sum += rolls[j];
+  }
+
+  req.params.rolls = rolls;
+  req.params.sum = sum;
+
+  res.render('rolldice', req.params);
+});
+
 var port = process.env.PORT;
 
 app.listen(port, function(){

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sum</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <h1>Sum</h1>
+    <h2 style="font-size:<%= fontsize %>; border:<%= color %> solid <%= borderwidth %>"> <%= i %> + <%= j %> + <%= k %> + <%= l %> = <% var num = i + j + k + l %> <span class="<%var mod = num % 2===0 ? 'even' : 'odd' %><%= mod%>"><%= num %></span> </h2>
+  </body>
+</html>
