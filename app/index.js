@@ -59,16 +59,10 @@ app.get('/rolldice/:x', function(req, res){
 
   for(var i = 0; i < req.params.x; i++){
     rolls.push(Math.floor(Math.random()*6)+1);
+    sum += rolls[i];
   }
 
-  for(var j = 0; j < rolls.length; j++){
-    sum += rolls[j];
-  }
-
-  req.params.rolls = rolls;
-  req.params.sum = sum;
-
-  res.render('rolldice', req.params);
+  res.render('rolldice', {rolls:rolls, sum:sum});
 });
 
 var port = process.env.PORT;
